@@ -1,13 +1,13 @@
 const cors = require("cors");
 const express = require("express");
-const routes = require("./routes/auth.js");
+const routes = require("./routes/authRoute.js");
 const app = express();
 const bodyParser = require("body-parser");
 
 app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use("/api/auth", routes);
+app.use("/api/v1/auth", routes);
 
 app.get("/", function (req, res) {
   res.send("Hello World");

@@ -4,9 +4,10 @@ const routes = require("./routes/auth.js");
 const app = express();
 const bodyParser = require("body-parser");
 
+app.use(cors({ origin: "*" }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use("/", routes);
+app.use("/api/auth", routes);
 
 app.get("/", function (req, res) {
   res.send("Hello World");
